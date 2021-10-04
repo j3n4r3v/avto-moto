@@ -12,13 +12,13 @@ export const carInfo = {
     cylindersNumber: 4,
     newModel: true,
     photos: [
-        `./img/content/desktop_slide_1.jpg`,
-        `./img/content/desktop_slide_2.jpg`,
-        `./img/content/desktop_slide_3.jpg`
+        `./img/content/desctop_slide_1.jpg`,
+        `./img/content/desctop_slide_2.jpg`,
+        `./img/content/desctop_slide_3.jpg`
     ],
     photosPreview: [
-        `./img/content/desktop_slide_1_min.jpg`,
-        `./img/content/desktop_slide_2_min.jpg`,
-        `./img/content/desktop_slide_3_min.jpg`
+        `.img/content/desctop_slide_1_min.jpg`,
+        `.img/content/desctop_slide_2_min.jpg`,
+        `.img/content/desctop_slide_3_min.jpg`
     ],
 };

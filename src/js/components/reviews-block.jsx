@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
-import dayjs from 'dayjs';
-
 import { reviewsDetails } from '../types/types';
 import Modal from './popup';
+
+import PropTypes from 'prop-types';
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(relativeTime);
+
+
 
 const reviewStars = [1, 2, 3, 4, 5];
 
@@ -66,7 +70,7 @@ const ReviewsBlock = (props) => {
                         </div>
                         <div className="review__reply">
                             <p className="review__date">{dayjs(date).fromNow()}</p>
-                            <Link className="review__button-reply">Ответить</Link>
+                            <Link to="#" className="review__button-reply">Ответить</Link>
                         </div>
                     </blockquote>
                 </li>;

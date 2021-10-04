@@ -16,11 +16,19 @@ import { getReviews } from '../store/reviews/selector';
 
 import { reviewsDetails, carDetails} from '../types/types';
 
+import withActiveModal from '../hocs/with-active-modal';
+import withActiveSlide from '../hocs/with-active-slide';
+import withActiveItem from '../hocs/with-active-item';
+
 const TabNames = {
     DETAILS: `Характеристики`,
     REVIEWS: `Отзывы`,
     CONTACTS: `Контакты`,
 };
+
+const TabsWrapped = withActiveItem(Tabs);
+const CarSliderWrapped = withActiveSlide(CarSlider);
+const ReviewsBlockWrapped = withActiveModal(ReviewsBlock);
 
 const CarCard = (props) => {
     const { carInfo, reviews } = props;
@@ -29,23 +37,23 @@ const CarCard = (props) => {
         <section className="car-card">
             <div className="car-card__wrapper">
 
-                <CarSlider carInfo={carInfo} />
+                <CarSliderWrapped carInfo={carInfo} />
 
                 <CarInfo carInfo={carInfo} />
 
             </div>
 
-            <Tabs>
+            <TabsWrapped>
                 <Tab title={TabNames.DETAILS}>
                     <DetailsBlock carInfo={carInfo} />
                 </Tab>
                 <Tab title={TabNames.REVIEWS}>
-                    <ReviewsBlock reviews={reviews} />
+                    <ReviewsBlockWrapped reviews={reviews} />
                 </Tab>
                 <Tab title={TabNames.CONTACTS}>
                     <ContactsBlock />
                 </Tab>
-            </Tabs>
+            </TabsWrapped>
 
         </section>
     </>;

@@ -4,7 +4,7 @@ const Header = () => {
     return <>
         <header className="header">
             <div className="header__wrapper">
-                <a href="#" className="header__logo">
+                <a href="/" className="header__logo">
                     <span className="visually-hidden">Логотип Avto-moto</span>
                     <svg className="header__logo-icon" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M42.1547 27.269L35.3713 26.719C34.3621 26.6375 33.6095 25.7537 33.691 24.7445C33.7295 24.2623 33.9578 23.815 34.3254 23.4997L39.4899 19.0694C37.6189 16.4074 34.9184 14.4411 31.8109 13.4778L29.1902 19.7662C28.8005 20.7012 27.7272 21.1421 26.7922 20.7525C26.3457 20.5664 25.991 20.2116 25.8058 19.7662L23.1915 13.4834C20.084 14.4468 17.3835 16.4131 15.5126 19.075L20.6771 23.5053C21.4461 24.1643 21.5351 25.3213 20.876 26.0903C20.5608 26.4579 20.1133 26.6852 19.6312 26.7246L12.8479 27.2746C12.8479 27.3525 12.8359 27.4277 12.8359 27.5056C12.8341 30.6818 13.8708 33.7719 15.7876 36.3056L21.591 32.7654C22.4555 32.2383 23.5838 32.5114 24.1109 33.3759C24.3631 33.7893 24.4409 34.2852 24.3291 34.7555L22.7543 41.3739C25.8297 42.4417 29.1756 42.4417 32.2509 41.3739L30.6761 34.7555C30.4414 33.771 31.0492 32.7819 32.0346 32.5472C32.5049 32.4354 33.0007 32.5133 33.4142 32.7654L39.2149 36.3001C41.1316 33.7664 42.1683 30.6763 42.1665 27.5001C42.1666 27.4221 42.1565 27.3469 42.1547 27.269ZM27.5 30.25C25.981 30.25 24.75 29.0189 24.75 27.5C24.75 25.981 25.981 24.75 27.5 24.75C29.0189 24.75 30.25 25.981 30.25 27.5C30.25 29.0189 29.0189 30.25 27.5 30.25Z" fill="#D12136" />
@@ -55,22 +55,22 @@ const Header = () => {
                 <nav className="page-header__main-nav main-nav">
                     <ul className="main-nav__list">
                         <li className="main-nav__item">
-                            <a href="#" className="main-nav__link">
+                            <a href="/" className="main-nav__link">
                                 <span className="main-nav__text">Автомобили</span>
                             </a>
                         </li>
                         <li className="main-nav__item">
-                            <a href="#" className="main-nav__link">
+                            <a href="/" className="main-nav__link">
                                 <span className="main-nav__text">Контакты</span>
                             </a>
                         </li>
                         <li className="main-nav__item">
-                            <a href="#" className="main-nav__link">
+                            <a href="/" className="main-nav__link">
                                 <span className="main-nav__text">Услуги</span>
                             </a>
                         </li>
                         <li className="main-nav__item">
-                            <a href="#" className="main-nav__link main-nav__link--active">
+                            <a href="/" className="main-nav__link main-nav__link--active">
                                 <span className="main-nav__text">Вакансии</span>
                             </a>
                         </li>

@@ -5,5 +5,5 @@ import NameSpace from './name-space';
 
 export default combineReducers({
     [NameSpace.REVIEWS]: reviews,
-    [NameSpace.CARS]: cars,
+    [NameSpace.CARS]: cars
 });

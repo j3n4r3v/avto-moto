@@ -1,0 +1,31 @@
+.header {
+  background-color: $bg-gray;
+  flex-shrink: 1;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1225px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 37px;
+}
+
+.header__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.header__text-logo {
+  margin-bottom: 9px;
+}

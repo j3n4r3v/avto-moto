@@ -1,0 +1,37 @@
+.main-nav {
+  width: 520px;
+  margin-right: 20px;
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+  list-style: none;
+}
+
+.main-nav__item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.main-nav__link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  color: $text-gray;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+    color: $text-black;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

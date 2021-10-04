@@ -1,0 +1,124 @@
+.review-form__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.review-form__col {
+  margin-left: 35px;
+  width: 300px;
+  flex-basis: 50%;
+
+  &:last-of-type {
+    margin-right: 35px;
+    margin-left: 28px;
+  }
+}
+
+.review-form__left-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 25px;
+}
+
+.review-form__left-item {
+  width: 298px;
+}
+
+.review-form__input {
+  position: relative;
+  padding: 15px 25px 16px;
+  width: 248px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(72, 73, 77, 0.2);
+  font-size: 14px;
+  line-height: 19px;
+
+  &:focus {
+    border: 1px solid $border-red;
+  }
+}
+
+.review-form__comment {
+  position: relative;
+}
+
+.review-form__textarea {
+  padding: 17px 25px 18px;
+  width: 250px;
+  border: 1px solid rgba(72, 73, 77, 0.2);
+  min-height: 88px;
+  font-size: 14px;
+  line-height: 19px;
+  resize: none;
+}
+
+.review-form__submit {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.review-form__button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  color: $text-white;
+  background-color: $bg-red;
+  padding: 16px 20px 17px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-dark-red;
+  }
+}
+
+.review-form__button-close {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  border: none;
+  background-color: transparent;
+  fill: $button-gray;
+  cursor: pointer;
+
+  &:hover {
+    fill: $button-red;
+  }
+}
+
+.review-form__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ff0000;
+
+  &--textarea {
+    top: -24px;
+  }
+}
+
+.review-form__label {
+  position: absolute;
+  top: 38px;
+  left: 12px;
+  font-size: 14px;
+  color: #ff0000;
+  z-index: 2;
+
+  &--textarea {
+    top: 15px;
+  }
+}

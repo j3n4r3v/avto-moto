@@ -1,0 +1,39 @@
+.contacts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.contacts__item {
+  margin-bottom: 25px;
+}
+
+.contacts__name {
+  padding: 0;
+  margin: 0;
+  line-height: 22px;
+  font-weight: 700;
+  padding-bottom: 7px;
+
+  &--address {
+    padding-bottom: 11px;
+  }
+}
+
+.contacts__value,
+.contacts__link {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 15px;
+  color: $text-black;
+  text-decoration: none;
+}
+
+.contacts__link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

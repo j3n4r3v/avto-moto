@@ -1,0 +1,60 @@
+.car-card__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.car-card__desc {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 16px;
+}
+
+.car-card__reviews-list {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  margin-top: 33px;
+  list-style: none;
+}
+
+.car-card__reviews-item {
+  position: relative;
+  padding-bottom: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $bg-gray;
+  }
+}
+
+.car-card__contacts-wrapper {
+  position: relative;
+}
+
+.car-card__review-button {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  padding: 16px 19px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-red;
+  background-color: transparent;
+  border: 1px solid $border-red;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-dark-red;
+    color: $text-white;
+    border: none;
+  }
+}

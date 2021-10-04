@@ -1,0 +1,62 @@
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  margin-top: 27px;
+}
+
+.rating .rating__input {
+  display: none;
+}
+
+.rating > .rating__input:checked ~ label {
+  color: rgba($text-red, 0.8);
+}
+
+.rating:not(:checked) > .rating__label:hover,
+.rating:not(:checked) > .rating__label:hover ~ label {
+  color: rgba($text-red, 0.6);
+}
+
+.rating > .rating__input:checked + .rating__label:hover,
+.rating > .rating__input:checked + .rating__label:hover ~ .rating__label,
+.rating > .rating__input:checked ~ .rating__label:hover,
+.rating > .rating__input:checked ~ .rating__label:hover ~ .rating__label,
+.rating > label:hover ~ .rating__input:checked ~ label {
+  color: rgba($text-red, 0.9);
+}
+
+.rating__label {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  padding-right: 5px;
+  cursor: pointer;
+  color: rgba(56, 44, 42, 0.36);
+  transition: color 0.2s;
+
+  &:first-of-type {
+    padding-right: 0;
+  }
+}
+
+.rating__label:first-child {
+  padding-right: 0;
+}
+
+.rating__label::after {
+  content: "★";
+  display: block;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.rating__text {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  align-self: center;
+}

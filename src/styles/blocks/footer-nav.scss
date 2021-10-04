@@ -1,0 +1,38 @@
+.footer-nav {
+  max-width: 1225px;
+  margin: 0 auto;
+}
+
+.footer-nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.footer-nav__item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 30px;
+}
+
+.footer-nav__link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  color: $text-gray;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+    color: $text-black;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

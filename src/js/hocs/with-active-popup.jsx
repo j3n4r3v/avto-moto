@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 
-const withActiveModal = (Component) => {
-    class WithActiveModal extends PureComponent {
+const withActivePopup = (Component) => {
+    class WithActivePopup extends PureComponent {
         constructor(props) {
             super(props);
             this.state = {
                 isActive: false,
             };
-            this.handleActiveModalChange = this.handleActiveModalChange.bind(this);
+            this.handleActivePopupChange = this.handleActivePopupChange.bind(this);
         }
 
-        handleActiveModalChange() {
+        handleActivePopupChange() {
             this.setState({
                 isActive: !this.state.isActive,
             });
@@ -22,14 +22,14 @@ const withActiveModal = (Component) => {
             return <Component
                 {...this.props}
                 isActive={isActive}
-                onActiveModalChange={this.handleActiveModalChange}
+                onActivePopupChange={this.handleActivePopupChange}
             />;
         }
     }
 
-    WithActiveModal.propTypes = {};
+    WithActivePopup.propTypes = {};
 
-    return WithActiveModal;
+    return WithActivePopup;
 };
 
-export default withActiveModal;
+export default withActivePopup;

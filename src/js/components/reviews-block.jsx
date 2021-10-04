@@ -2,19 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { reviewsDetails } from '../types/types';
-import Modal from './popup';
+import Popup from './popup';
+
+import withName from '../hocs/with-name';
+import withRating from '../hocs/with-rating';
+import withText from '../hocs/with-text';
 
 import PropTypes from 'prop-types';
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
-
-
 const reviewStars = [1, 2, 3, 4, 5];
 
+const PopupWrapped = withName(withRating(withText(Popup)));
+
 const ReviewsBlock = (props) => {
-    const { reviews, isActive, onActiveModalChange } = props;
+    const { reviews, isActive, onActivePopupChange } = props;
     return <>
         <ul className="car-card__reviews-list">
             {reviews.map((review, i) => {
@@ -78,18 +82,18 @@ const ReviewsBlock = (props) => {
         </ul>
         <button className="car-card__review-button" type="button" onClick={(evt) => {
             evt.preventDefault();
-            onActiveModalChange();
+            onActivePopupChange();
         }}>
             Оставить отзыв
         </button>
-        {isActive && <Modal onActiveModalChange={onActiveModalChange} />}
+        {isActive && <PopupWrapped onActivePopupChange={onActivePopupChange} />}
     </>;
 };
 
 ReviewsBlock.propTypes = {
     reviews: PropTypes.arrayOf(reviewsDetails),
     isActive: PropTypes.bool.isRequired,
-    onActiveModalChange: PropTypes.func.isRequired,
+    onActivePopupChange: PropTypes.func.isRequired,
 };
 
 export default ReviewsBlock;

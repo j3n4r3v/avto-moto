@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import CarInfo from './car-info';
 import CarSlider from './car-slider';
@@ -9,14 +10,12 @@ import DetailsBlock from './details-block';
 import ReviewsBlock from './reviews-block';
 import ContactsBlock from './contacts-block';
 
-import { connect } from 'react-redux';
-
 import { getActiveCar } from '../store/cars/selector';
 import { getReviews } from '../store/reviews/selector';
 
 import { reviewsDetails, carDetails} from '../types/types';
 
-import withActiveModal from '../hocs/with-active-modal';
+import withActivePopup from '../hocs/with-active-popup';
 import withActiveSlide from '../hocs/with-active-slide';
 import withActiveItem from '../hocs/with-active-item';
 
@@ -28,7 +27,7 @@ const TabNames = {
 
 const TabsWrapped = withActiveItem(Tabs);
 const CarSliderWrapped = withActiveSlide(CarSlider);
-const ReviewsBlockWrapped = withActiveModal(ReviewsBlock);
+const ReviewsBlockWrapped = withActivePopup(ReviewsBlock);
 
 const CarCard = (props) => {
     const { carInfo, reviews } = props;

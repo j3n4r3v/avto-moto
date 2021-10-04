@@ -17,8 +17,8 @@ export const carInfo = {
         `./img/content/desctop_slide_3.jpg`
     ],
     photosPreview: [
-        `.img/content/desctop_slide_1_min.jpg`,
-        `.img/content/desctop_slide_2_min.jpg`,
-        `.img/content/desctop_slide_3_min.jpg`
+        `./img/content/desctop_slide_1_min.jpg`,
+        `./img/content/desctop_slide_2_min.jpg`,
+        `./img/content/desctop_slide_3_min.jpg`
     ],
 };

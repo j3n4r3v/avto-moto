@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { carDetails } from '../types/types';
+
 const CarSlider = (props) => {
     const { carInfo, activeSlide, onLeftArrowClick, onRightArrowClick } = props;
     const { photos, photosPreview, newModel } = carInfo;
@@ -45,6 +47,7 @@ const CarSlider = (props) => {
 };
 
 CarSlider.propTypes = {
+    carInfo: carDetails,
     activeSlide: PropTypes.number.isRequired,
     onLeftArrowClick: PropTypes.func.isRequired,
     onRightArrowClick: PropTypes.func.isRequired,

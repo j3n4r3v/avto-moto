@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
-import { reviewsDetails } from './types/types';
 import dayjs from 'dayjs';
+
+import { reviewsDetails } from '../types/types';
 import Modal from './popup';
 
 const reviewStars = [1, 2, 3, 4, 5];

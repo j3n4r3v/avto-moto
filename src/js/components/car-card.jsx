@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import CarInfo from './car-info';
 import CarSlider from './car-slider';
 import Tabs from './tabs';
-
 import Tab from './tab';
 import DetailsBlock from './details-block';
 import ReviewsBlock from './reviews-block';
-
 import ContactsBlock from './contacts-block';
 
-import {reviewsDetails } from './types/types';
+import { connect } from 'react-redux';
+
+import { getActiveCar } from '../store/cars/selector';
+import { getReviews } from '../store/reviews/selector';
+
+import { reviewsDetails, carDetails} from '../types/types';
 
 const TabNames = {
     DETAILS: `Характеристики`,
@@ -49,8 +52,13 @@ const CarCard = (props) => {
 };
 
 CarCard.propTypes = {
+    carInfo: carDetails,
     reviews: PropTypes.arrayOf(reviewsDetails)
 };
 
+const mapStateToProps = (state) => ({
+    carInfo: getActiveCar(state),
+    reviews: getReviews(state),
+});
 
-export default CarCard;
+export default connect(mapStateToProps)(CarCard);

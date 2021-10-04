@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { carDetails } from './types/types';
+import { carDetails } from '../types/types';
+import { numberWithSpaces } from '../utils/utils';
 
 const CarInfo = (props) => {
     const { carInfo } = props;
-    const { model, price, transmission, horsePower, engineType, engineVolume } = carInfo;
+    const { model, price, oldPrice, transmission, horsePower, engineType, engineVolume } = carInfo;
 
     return <>
         <div className="car-card__car-info car-info">
@@ -45,8 +46,8 @@ const CarInfo = (props) => {
                 </li>
             </ul>
             <p className="car-info__price">
-                <span> {price} &#8381;</span>
-                <span className="car-info__old-price"> &#8381;</span>
+                <span> {numberWithSpaces(price)} &#8381;</span>
+                <span className="car-info__old-price"> {numberWithSpaces(oldPrice)} &#8381;</span>
             </p>
             <div className="car-info__links">
                 <Link to="#" className="car-info__link car-info__link--buy">

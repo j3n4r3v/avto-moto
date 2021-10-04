@@ -1,5 +1,5 @@
 import React from 'react';
-import { carDetails } from './types/types';
+import { carDetails } from '../types/types';
 
 const DetailsBlock = (props) => {
     const { carInfo } = props;

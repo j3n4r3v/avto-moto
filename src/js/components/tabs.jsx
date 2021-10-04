@@ -22,10 +22,10 @@ const Tabs = (props) => {
                 })}
             </ul>
         </nav>
-        {children.map((child, index) => {
+        {children.map((child, i) => {
             const { children: content } = child.props;
 
-            return index === activeItem
+            return i === activeItem
                 ? content
                 : null;
         })}

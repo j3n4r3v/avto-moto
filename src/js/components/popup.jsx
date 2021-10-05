@@ -10,8 +10,6 @@ import { ValidStatus } from '../utils/const';
 
 import { ReactComponent as Cross } from '../../img/icon/cross.svg';
 
-import dayjs from "dayjs";
-
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
 class Popup extends PureComponent {
@@ -65,7 +63,7 @@ class Popup extends PureComponent {
             comment,
             dignity,
             limitations,
-            date: dayjs().fromNow(),
+            date: new Date().toUTCString(),
         });
 
         setItem(`author`, author);
@@ -73,7 +71,7 @@ class Popup extends PureComponent {
         setItem(`comment`, comment);
         setItem(`dignity`, dignity);
         setItem(`limitations`, limitations);
-        setItem(`date`, dayjs().fromNow());
+        setItem(`date`, new Date().toUTCString());
 
         onActivePopupChange();
     }
@@ -194,7 +192,7 @@ Popup.propTypes = {
     comment: PropTypes.string.isRequired,
     validComment: PropTypes.bool.isRequired,
     rating: PropTypes.string.isRequired,
-    onNameValidCkeck: PropTypes.func.isRequired,
+    onValidNameCheck: PropTypes.func.isRequired,
     onValidCommentCheck: PropTypes.func.isRequired,
 };
 

@@ -12,11 +12,9 @@ import { ReactComponent as Plus } from '../../img/icon/plus.svg';
 import { ReactComponent as Minus } from '../../img/icon/minus.svg';
 import { ReactComponent as Star } from '../../img/icon/star.svg';
 
-
 import PropTypes from 'prop-types';
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-dayjs.extend(relativeTime);
+
+import moment from 'moment';
 
 const reviewStars = [1, 2, 3, 4, 5];
 
@@ -28,6 +26,7 @@ const ReviewsBlock = (props) => {
         <ul className="car-card__reviews-list">
             {reviews.map((review, i) => {
                 const { author, dignity, limitations, comment, rating, date } = review;
+                console.log(moment(date).locale(`ru`))
                 return <li key={i} className="car-card__reviews-item">
                     <blockquote className="car-card__reviews-article review">
                         <h3 className="review__author">{author}</h3>
@@ -78,7 +77,7 @@ const ReviewsBlock = (props) => {
                             <p className="review__rating-advice">Советует</p>
                         </div>
                         <div className="review__reply">
-                            <p className="review__date">{dayjs(date).fromNow()}</p>
+                            <p className="review__date">{moment(date).locale(`ru`).fromNow()}</p>
                             <Link to="#" className="review__button-reply">Ответить</Link>
                         </div>
                     </blockquote>

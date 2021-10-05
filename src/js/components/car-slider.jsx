@@ -14,9 +14,7 @@ const CarSlider = (props) => {
         <div className="car-card__slider slider">
             <ul className="slider__list">
                 {photos.map((photo, i) => {
-                    return <li key={i} className={`slider__item ${(i === activeSlide)
-                        ? `slider__item--active`
-                        : ``}`}>
+                    return <li key={i} className={`slider__item ${(i === activeSlide) ? `slider__item--active` : ``}`}>
                         <img className="slider__image" src={photo} width="600" height="375" alt="Фото автомобиля"/>
                         {(newModel) && <p className="slider__text">New model</p>}
                     </li>;

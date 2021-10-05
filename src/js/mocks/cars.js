@@ -1,3 +1,10 @@
+import slide1 from '../../img/content/desctop_slide_1.jpg'
+import slide2 from '../../img/content/desctop_slide_2.jpg'
+import slide3 from '../../img/content/desctop_slide_3.jpg'
+import slide1min from '../../img/content/desctop_slide_1_min.jpg'
+import slide2min from '../../img/content/desctop_slide_2_min.jpg'
+import slide3min from '../../img/content/desctop_slide_3_min.jpg'
+
 export const carInfo = {
     id: 1,
     model: `Марпех 11`,
@@ -12,13 +19,13 @@ export const carInfo = {
     cylindersNumber: 4,
     newModel: true,
     photos: [
-        `../../img/content/desctop_slide_1.jpg`,
-        `../../img/content/desctop_slide_2.jpg`,
-        `../../img/content/desctop_slide_3.jpg`
+        slide1,
+        slide2,
+        slide3
     ],
     photosPreview: [
-        `../../img/content/desctop_slide_1_min.jpg`,
-        `../../img/content/desctop_slide_2_min.jpg`,
-        `../../img/content/desctop_slide_3_min.jpg`
+        slide1min,
+        slide2min,
+        slide3min
     ],
 };

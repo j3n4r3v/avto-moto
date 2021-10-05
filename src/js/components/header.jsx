@@ -19,7 +19,7 @@ const Header = () => {
                         <LogoTextDown className="header__text-logo" width="47" height="12" />
                     </p>
                 </Link>
-                <nav className="page-header__main-nav main-nav">
+                <nav className="header__main-nav main-nav">
                     <ul className="main-nav__list">
                         <li className="main-nav__item">
                             <Link to={AppRoute.CARS} className="main-nav__link">

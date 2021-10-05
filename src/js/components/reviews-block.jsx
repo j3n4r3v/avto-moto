@@ -78,7 +78,7 @@ const ReviewsBlock = (props) => {
                             <p className="review__rating-advice">Советует</p>
                         </div>
                         <div className="review__reply">
-                            <p className="review__date">{dayjs().fromNow()}</p>
+                            <p className="review__date">{dayjs(date).fromNow()}</p>
                             <Link to="#" className="review__button-reply">Ответить</Link>
                         </div>
                     </blockquote>

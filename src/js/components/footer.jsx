@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return <>
-        <footer className="page-footer">
-            <nav className="page-footer__footer-nav footer-nav">
+        <footer className="footer">
+            <nav className="footer__footer-nav footer-nav">
                 <ul className="footer-nav__list">
                     <li className="footer-nav__item">
                         <a href="/" className="footer-nav__link">

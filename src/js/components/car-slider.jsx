@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import { carDetails } from '../types/types';
 
+import { ReactComponent as ArrowRight } from '../../img/icon/arrow-right.svg';
+import { ReactComponent as ArrowLeft } from '../../img/icon/arrow-left.svg';
+
 const CarSlider = (props) => {
     const { carInfo, activeSlide, onLeftArrowClick, onRightArrowClick } = props;
     const { photos, photosPreview, newModel } = carInfo;
@@ -21,24 +24,24 @@ const CarSlider = (props) => {
             </ul>
             <div className="slider__controls">
                 <button type="button" className="slider__button" onClick={onLeftArrowClick} disabled={activeSlide === 0}>
-                    <svg width="19" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.00427 6.17188L6.91841 0.368597M1.00427 6.17188L6.69294 11.9692M1.00427 6.17188L19.9813 6.35128" stroke="#48494D" />
-                    </svg>
+
+                    <ArrowLeft width="19" height="13" />
+
                     <span className="visually-hidden">Слайдер влево</span>
                 </button>
                 <ul className="slider__img-list">
-                    {photosPreview.map((photo, i) => {
-                        return <li key={i} className={`slider__img-item ${(i === activeSlide)
+                    {photosPreview.map((photo, index) => {
+                        return <li key={index} className={`slider__img-item ${(index === activeSlide)
                             ? `slider__img-item--active`
                             : ``}`}>
-                            <img className="slider__img" src={photo} width="128" height="80" alt="Мини фото автомобиля"/>
+                            <img className="slider__img" src={photo} width="128" height="80" alt="Мини фото автомобиля"></img>
                         </li>;
                     })}
                 </ul>
                 <button type="button" className="slider__button" onClick={onRightArrowClick} disabled={activeSlide === photos.length - 1}>
-                    <svg width="19" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.9873 6.17188L13.0747 0.368597M18.9873 6.17188L13.3001 11.9692M18.9873 6.17188L0.0150977 6.35128" stroke="#48494D" />
-                    </svg>
+
+                    <ArrowRight width="19" height="13" />
+
                     <span className="visually-hidden">Слайдер враво</span>
                 </button>
             </div>

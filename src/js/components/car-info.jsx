@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { carDetails } from '../types/types';
 import { numberWithSpaces } from '../utils/utils';
+
+import { ReactComponent as Gas } from '../../img/icon/gas.svg';
+import { ReactComponent as Transmission } from '../../img/icon/transmission.svg';
+import { ReactComponent as HorsePower } from '../../img/icon/horse-power.svg';
+import { ReactComponent as Capacity } from '../../img/icon/capacity.svg';
 
 const CarInfo = (props) => {
     const { carInfo } = props;
@@ -13,33 +17,33 @@ const CarInfo = (props) => {
             <h2 className="car-info__title">{model}</h2>
             <ul className="car-info__list">
                 <li className="car-info__item">
-                    <svg width="22" height="22">
-                        <use xlinkHref="#gas"></use>
-                    </svg>
+
+                    <Gas width="22" height="22" />
+
                     <p className="car-info__text">
                         {engineType}
                     </p>
                 </li>
                 <li className="car-info__item">
-                    <svg width="23" height="22">
-                        <use xlinkHref="#transmission"></use>
-                    </svg>
+
+                    <Transmission width="23" height="22" />
+
                     <p className="car-info__text">
                         {transmission}
                     </p>
                 </li>
                 <li className="car-info__item">
-                    <svg width="30" height="21">
-                        <use xlinkHref="#horse-power"></use>
-                    </svg>
+
+                    <HorsePower width="30" height="21" />
+
                     <p className="car-info__text">
                         {horsePower} л.с.
                     </p>
                 </li>
                 <li className="car-info__item">
-                    <svg width="30" height="22">
-                        <use xlinkHref="#capacity"></use>
-                    </svg>
+                    
+                    <Capacity width="30" height="22" />
+
                     <p className="car-info__text">
                         {engineVolume} л.
                     </p>
@@ -50,12 +54,12 @@ const CarInfo = (props) => {
                 <span className="car-info__old-price"> {numberWithSpaces(oldPrice)} &#8381;</span>
             </p>
             <div className="car-info__links">
-                <Link to="#" className="car-info__link car-info__link--buy">
+                <a href="/" className="car-info__link car-info__link--buy">
                     Оставить заявку
-                </Link>
-                <Link to="#" className="car-info__link car-info__link--credit">
+                </a>
+                <a href="/" className="car-info__link car-info__link--credit">
                     В кредит от 11 000 &#8381;
-                </Link>
+                </a>
             </div>
         </div>
     </>;

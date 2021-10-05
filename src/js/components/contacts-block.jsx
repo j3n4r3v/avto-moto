@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 
 import PropTypes from 'prop-types';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
@@ -16,8 +16,8 @@ const containerStyle = {
     top: `6px`,
 };
 
-const ContactsBlock = (props) => {
-
+class ContactsBlock extends PureComponent {
+    render() {
         return <>
             <div className="car-card__contacts-wrapper">
                 <ul className="car-card__contacts contacts">
@@ -39,7 +39,7 @@ const ContactsBlock = (props) => {
                     </li>
                 </ul>
                 <Map
-                    google={props.google}
+                    google={this.props.google}
                     style={mapStyles}
                     containerStyle={containerStyle}
                     initialCenter={
@@ -50,20 +50,19 @@ const ContactsBlock = (props) => {
                     }
                     zoom={14}>
 
-                    <Marker onClick={props.onMarkerClick}
-                        title={`Hабережная реки Карповки, дом 5`}
-                        name={`Avto-moto`}
+                    <Marker
                         position={{ lat: 59.968137, lng: 30.316263 }}
                     />
                 </Map>
             </div>
         </>;
     }
+}
 
 ContactsBlock.propTypes = {
-    google: PropTypes.any,
-};
+        google: PropTypes.any,
+    };
 
-export default GoogleApiWrapper({ //eslint-disable-line
+export default GoogleApiWrapper({
     apiKey: (`AIzaSyBQuN65AmmT6r8J2DNz4IbTjw1Yu_os6mw`)
 })(ContactsBlock);

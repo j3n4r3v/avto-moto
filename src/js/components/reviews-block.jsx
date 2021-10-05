@@ -8,6 +8,11 @@ import withName from '../hocs/with-name';
 import withRating from '../hocs/with-rating';
 import withText from '../hocs/with-text';
 
+import { ReactComponent as Plus } from '../../img/icon/plus.svg';
+import { ReactComponent as Minus } from '../../img/icon/minus.svg';
+import { ReactComponent as Star } from '../../img/icon/star.svg';
+
+
 import PropTypes from 'prop-types';
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -29,9 +34,9 @@ const ReviewsBlock = (props) => {
                         <ul className="review__list">
                             <li className="review__item">
                                 <p className="review__title">
-                                    <svg className="review__icon" width="8" height="8" viewBox="0 0 8 8">
-                                        <use xlinkHref="#plus"></use>
-                                    </svg>
+
+                                    <Plus  className="review__icon" width="8" height="8" />
+
                                     Достоинства
                                 </p>
                                 <p className="review__text">
@@ -40,9 +45,9 @@ const ReviewsBlock = (props) => {
                             </li>
                             <li className="review__item">
                                 <p className="review__title">
-                                    <svg className="review__icon review__icon--minus" width="7" height="2" viewBox="0 0 7 2" >
-                                        <use xlinkHref="#minus"></use>
-                                    </svg>
+
+                                    <Minus className="review__icon review__icon--minus" width="7" height="2" />
+
                                     Недостатки
                                 </p>
                                 <p className="review__text">
@@ -64,16 +69,16 @@ const ReviewsBlock = (props) => {
                                     return <li key={i} className={`review__stars-item ${(star <= rating)
                                         ? `review__stars-item--fill`
                                         : ``}`}>
-                                        <svg className="review__star-icon" width="17" height="16" viewBox="0 0 17 16">
-                                            <use xlinkHref="#star"></use>
-                                        </svg>
+                                        
+                                        <Star className="review__star-icon" width="17" height="16" />
+
                                     </li>;
                                 })}
                             </ul>
                             <p className="review__rating-advice">Советует</p>
                         </div>
                         <div className="review__reply">
-                            <p className="review__date">{dayjs(date).fromNow()}</p>
+                            <p className="review__date">{dayjs().fromNow()}</p>
                             <Link to="#" className="review__button-reply">Ответить</Link>
                         </div>
                     </blockquote>

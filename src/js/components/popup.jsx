@@ -2,17 +2,15 @@ import React, {Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import '../../styles/blocks/popup.scss';
-
 import { ActionCreator as ReviewCreator } from '../store/reviews/reviews';
 
 import { randomNumber, setItem } from '../utils/utils';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { ValidStatus } from '../utils/const';
 
+import { ReactComponent as Cross } from '../../img/icon/cross.svg';
+
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-dayjs.extend(relativeTime);
 
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
@@ -42,14 +40,14 @@ class Popup extends PureComponent {
             limitations,
             onSubmit,
             onActivePopupChange,
-            onCheckValidName,
+            onValidNameCheck,
             onValidCommentCheck,
         } = this.props;
 
         evt.preventDefault();
 
         if (!validAuthor || !author) {
-            onCheckValidName(ValidStatus.INVALID);
+            onValidNameCheck(ValidStatus.INVALID);
             return;
         }
 
@@ -165,9 +163,9 @@ class Popup extends PureComponent {
                             evt.preventDefault();
                             onActivePopupChange();
                         }}>
-                            <svg className="review-form__close-icon" width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.6399 15.0096L7.50482 8.86495L1.36977 15.0096L0 13.6399L6.14469 7.50482L0 1.36978L1.36977 0L7.50482 6.14469L13.6399 0.00964652L15 1.36978L8.86495 7.50482L15 13.6399L13.6399 15.0096Z" />
-                            </svg>
+                            
+                            <Cross className="review-form__close-icon" width="15" height="16" />
+
                         </button>
                     </div>
                 </form>

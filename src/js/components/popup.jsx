@@ -132,8 +132,8 @@ class Popup extends PureComponent {
                         </div>
                         <div className="review-form__col">
                             <div className="review-form__rating rating">
-                                {stars.map((star) => {
-                                    return <Fragment key={star}>
+                                {stars.map((star,i) => {
+                                    return <Fragment key={star+i}>
                                         <input className="rating__input" id={`star-${star}`} type="radio" name="rating" value={star}
                                             onChange={(evt) => {
                                                 onRatingChange(evt);

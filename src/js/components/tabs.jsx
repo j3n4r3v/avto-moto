@@ -10,7 +10,7 @@ const Tabs = (props) => {
             <ul className="car-nav__list">
                 {children.map((child, i) => {
                     const { title } = child.props;
-                    return <li key={`${title}-${i}`}
+                    return <li key={child+i}
                         className={`car-nav__item ${(activeItem === i)
                             ? `car-nav__item--active`
                             : ``}`}

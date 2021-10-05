@@ -15,6 +15,8 @@ import { ReactComponent as Star } from '../../img/icon/star.svg';
 import PropTypes from 'prop-types';
 
 import moment from 'moment';
+import 'moment/locale/ru';
+moment.locale(`ru`);
 
 const reviewStars = [1, 2, 3, 4, 5];
 
@@ -26,8 +28,8 @@ const ReviewsBlock = (props) => {
         <ul className="car-card__reviews-list">
             {reviews.map((review, i) => {
                 const { author, dignity, limitations, comment, rating, date } = review;
-                console.log(moment(date).locale(`ru`))
-                return <li key={i} className="car-card__reviews-item">
+
+                return <li key={review+i} className="car-card__reviews-item">
                     <blockquote className="car-card__reviews-article review">
                         <h3 className="review__author">{author}</h3>
                         <ul className="review__list">
@@ -65,7 +67,7 @@ const ReviewsBlock = (props) => {
                         <div className="review__rating">
                             <ul className="review__stars-list">
                                 {reviewStars.map((star, i) => {
-                                    return <li key={i} className={`review__stars-item ${(star <= rating)
+                                    return <li key={star+i} className={`review__stars-item ${(star <= rating)
                                         ? `review__stars-item--fill`
                                         : ``}`}>
                                         
@@ -77,7 +79,7 @@ const ReviewsBlock = (props) => {
                             <p className="review__rating-advice">Советует</p>
                         </div>
                         <div className="review__reply">
-                            <p className="review__date">{moment(date).locale(`ru`).fromNow()}</p>
+                            <p className="review__date">{moment(date).fromNow()}</p>
                             <Link to="#" className="review__button-reply">Ответить</Link>
                         </div>
                     </blockquote>

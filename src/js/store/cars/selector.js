@@ -4,4 +4,4 @@ const getActiveCar = (state) => {
     return state[NameSpace.CARS].carInfo;
 };
 
-export { getActiveCar };
+export {getActiveCar};

@@ -44,7 +44,7 @@ const withName = (Component) => {
                 author={author}
                 validAuthor={validAuthor}
                 onNameInput={this._handleNameInput}
-                onNameValidCkeck={this._handleValidNameCheck}
+                onValidNameCheck={this._handleValidNameCheck}
             />;
         }
     }

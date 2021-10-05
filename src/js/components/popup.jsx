@@ -47,11 +47,13 @@ class Popup extends PureComponent {
         evt.preventDefault();
 
         if (!validAuthor || !author) {
+            evt.preventDefault();
             onValidNameCheck(ValidStatus.INVALID);
             return;
         }
 
         if (!validComment || !comment) {
+            evt.preventDefault();
             onValidCommentCheck(ValidStatus.INVALID);
             return;
         }

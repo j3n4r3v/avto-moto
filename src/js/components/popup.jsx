@@ -1,4 +1,4 @@
-import React, {Fragment, PureComponent } from 'react';
+import React, {Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,22 +12,36 @@ import { ReactComponent as Cross } from '../../img/icon/cross.svg';
 
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
-class Popup extends PureComponent {
-    constructor(props) {
-        super(props);
+const Popup = (props) => {
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEscButtonClose = this.handleEscButtonClose.bind(this);
-    }
+        const {
+    author,
+    validAuthor,
+    comment,
+    validComment,
+    onActivePopupChange,
+    onRatingChange,
+    onNameInput,
+    onCommentInput,
+    onDignityInput,
+    onLimitationsInput,
+} = props;
 
-    handleEscButtonClose(evt) {
-        const { onActivePopupChange } = this.props;
+    useEffect(() => {
+        disablePageScroll();
+
+        return enablePageScroll;
+    }, [])
+
+    
+   const handleEscButtonClose = (evt) => {
+        const { onActivePopupChange } = props;
         if (evt.keyCode === 27) {
             onActivePopupChange();
         }
     }
 
-    handleSubmit(evt) {
+    const handleSubmit = (evt) => {
         const {
             author,
             validAuthor,
@@ -40,7 +54,7 @@ class Popup extends PureComponent {
             onActivePopupChange,
             onValidNameCheck,
             onValidCommentCheck,
-        } = this.props;
+        } = props;
 
         evt.preventDefault();
 
@@ -76,32 +90,10 @@ class Popup extends PureComponent {
         onActivePopupChange();
     }
 
-    componentDidMount() {
-        disablePageScroll();
-    }
-
-    componentWillUnmount() {
-        enablePageScroll();
-    }
-
-    render() {
-        const {
-            author,
-            validAuthor,
-            comment,
-            validComment,
-            onActivePopupChange,
-            onRatingChange,
-            onNameInput,
-            onCommentInput,
-            onDignityInput,
-            onLimitationsInput,
-        } = this.props;
-
         return <>
-            <section className="popup" onKeyDown={this.handleEscButtonClose}>
+            <section className="popup" onKeyDown={handleEscButtonClose}>
                 <h2 className="popup__title">Оставить отзыв</h2>
-                <form action="#" className="popup-form review-form" onSubmit={this.handleSubmit}>
+                <form action="#" className="popup-form review-form" onSubmit={handleSubmit}>
                     <div className="review-form__wrapper">
                         <div className="review-form__col">
                             <ul className="review-form__left-list">
@@ -132,8 +124,8 @@ class Popup extends PureComponent {
                         </div>
                         <div className="review-form__col">
                             <div className="review-form__rating rating">
-                                {stars.map((star,i) => {
-                                    return <Fragment key={star+i}>
+                                {stars.map((star, i) => {
+                                    return <Fragment key={star + i}>
                                         <input className="rating__input" id={`star-${star}`} type="radio" name="rating" value={star}
                                             onChange={(evt) => {
                                                 onRatingChange(evt);
@@ -163,7 +155,7 @@ class Popup extends PureComponent {
                             evt.preventDefault();
                             onActivePopupChange();
                         }}>
-                            
+
                             <Cross className="review-form__close-icon" width="15" height="16" />
 
                         </button>
@@ -175,7 +167,6 @@ class Popup extends PureComponent {
             }}></div>
         </>;
     }
-}
 
 Popup.propTypes = {
     onActivePopupChange: PropTypes.func.isRequired,

@@ -13,17 +13,13 @@ import ContactsBlock from './contacts-block';
 import { getActiveCar } from '../store/cars/selector';
 import { getReviews } from '../store/reviews/selector';
 
-import { reviewsDetails, carDetails} from '../types/types';
+import { reviewsDetails, carDetails } from '../types/types';
 
 import withActivePopup from '../hocs/with-active-popup';
 import withActiveSlide from '../hocs/with-active-slide';
 import withActiveItem from '../hocs/with-active-item';
 
-const TabNames = {
-    DETAILS: `Характеристики`,
-    REVIEWS: `Отзывы`,
-    CONTACTS: `Контакты`,
-};
+import { TabName } from '../utils/const'
 
 const TabsWrapped = withActiveItem(Tabs);
 const CarSliderWrapped = withActiveSlide(CarSlider);
@@ -43,13 +39,13 @@ const CarCard = (props) => {
             </div>
 
             <TabsWrapped>
-                <Tab title={TabNames.DETAILS}>
+                <Tab title={TabName.DETAILS}>
                     <DetailsBlock carInfo={carInfo} />
                 </Tab>
-                <Tab title={TabNames.REVIEWS}>
+                <Tab title={TabName.REVIEWS}>
                     <ReviewsBlockWrapped reviews={reviews} />
                 </Tab>
-                <Tab title={TabNames.CONTACTS}>
+                <Tab title={TabName.CONTACTS}>
                     <ContactsBlock />
                 </Tab>
             </TabsWrapped>

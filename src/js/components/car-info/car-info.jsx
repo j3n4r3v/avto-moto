@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { carDetails } from '../types/types';
-import { numberWithSpaces } from '../utils/utils';
+import { getNumberWithSpaces } from '../utils/utils';
 
 import { ReactComponent as Gas } from '../../img/icon/gas.svg';
 import { ReactComponent as Transmission } from '../../img/icon/transmission.svg';
@@ -50,8 +50,8 @@ const CarInfo = (props) => {
                 </li>
             </ul>
             <p className="car-info__price">
-                <span> {numberWithSpaces(price)} &#8381;</span>
-                <span className="car-info__old-price"> {numberWithSpaces(oldPrice)} &#8381;</span>
+                <span> {getNumberWithSpaces(price)} &#8381;</span>
+                <span className="car-info__old-price"> {getNumberWithSpaces(oldPrice)} &#8381;</span>
             </p>
             <div className="car-info__links">
                 <a href="/" className="car-info__link car-info__link--buy">

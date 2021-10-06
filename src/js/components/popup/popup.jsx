@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import { ActionCreator as ReviewCreator } from '../store/reviews/reviews';
 
-import { randomNumber, setItem } from '../utils/utils';
+import { getRandomNumber, setItem } from '../utils/utils';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { ValidStatus } from '../utils/const';
 
 import { ReactComponent as Cross } from '../../img/icon/cross.svg';
 
-const stars = [`5`, `4`, `3`, `2`, `1`];
+import { stars } from "../utils/const";
 
 const Popup = (props) => {
 
@@ -71,7 +71,7 @@ const {
         }
 
         onSubmit({
-            id: randomNumber(),
+            id: getRandomNumber(),
             author,
             rating: Number(rating),
             comment,

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { reviewStars } from '../utils/const';
+
 import { reviewsDetails } from '../types/types';
 import Popup from './popup';
 
@@ -18,7 +20,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 moment.locale(`ru`);
 
-const reviewStars = [1, 2, 3, 4, 5];
+
 
 const PopupWrapped = withName(withRating(withText(Popup)));
 

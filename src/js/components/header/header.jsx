@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../utils/const';
+import { AppRoute } from '../../utils/const';
 
-import { ReactComponent as Logo } from '../../img/icon/logo.svg';
-import { ReactComponent as LogoTextUp } from '../../img/icon/logo-text-up.svg';
-import { ReactComponent as LogoTextDown } from '../../img/icon/logo-text-down.svg';
+import { ReactComponent as Logo } from '../../../img/icon/logo.svg';
+import { ReactComponent as LogoTextUp } from '../../../img/icon/logo-text-up.svg';
+import { ReactComponent as LogoTextDown } from '../../../img/icon/logo-text-down.svg';
+
+import './header.scss';
 
 const Header = () => {
     return <>

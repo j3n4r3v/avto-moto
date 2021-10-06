@@ -2,33 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import CarInfo from './car-info';
-import CarSlider from './car-slider';
-import Tabs from './tabs';
-import Tab from './tab';
-import DetailsBlock from './details-block';
-import ReviewsBlock from './reviews-block';
-import ContactsBlock from './contacts-block';
+import './car-card.scss';
 
-import { getActiveCar } from '../store/cars/selector';
-import { getReviews } from '../store/reviews/selector';
+import CarInfo from '../car-info/car-info';
+import CarSlider from '../car-slider/car-slider';
+import Tabs from '../tabs/tabs';
+import Tab from '../tab/tab';
+import Details from '../details/details';
+import Reviews from '../reviews/reviews';
+import Contacts from '../contacts/contacts';
 
-import { reviewsDetails, carDetails } from '../types/types';
+import { getActiveCar } from '../../store/cars/selector';
+import { getReviews } from '../../store/reviews/selector';
 
-import withActivePopup from '../hocs/with-active-popup';
-import withActiveSlide from '../hocs/with-active-slide';
-import withActiveItem from '../hocs/with-active-item';
+import { reviewsDetails, carDetails } from '../../types/types';
 
-import { TabName } from '../utils/const'
+import withActivePopup from '../../hocs/with-active-popup';
+import withActiveSlide from '../../hocs/with-active-slide';
+import withActiveItem from '../../hocs/with-active-item';
+
+import { TabName } from '../../utils/const'
 
 const TabsWrapped = withActiveItem(Tabs);
 const CarSliderWrapped = withActiveSlide(CarSlider);
-const ReviewsBlockWrapped = withActivePopup(ReviewsBlock);
+const ReviewsWrapped = withActivePopup(Reviews);
 
 const CarCard = (props) => {
     const { carInfo, reviews } = props;
 
     return <>
+        <main className="main">
+            <div className="main__wrapper">
+                <h1 className="visually-hidden">Карточка автомобиля</h1>
+
         <section className="car-card">
             <div className="car-card__wrapper">
 
@@ -40,17 +46,19 @@ const CarCard = (props) => {
 
             <TabsWrapped>
                 <Tab title={TabName.DETAILS}>
-                    <DetailsBlock carInfo={carInfo} />
+                    <Details carInfo={carInfo} />
                 </Tab>
                 <Tab title={TabName.REVIEWS}>
-                    <ReviewsBlockWrapped reviews={reviews} />
+                    <ReviewsWrapped reviews={reviews} />
                 </Tab>
                 <Tab title={TabName.CONTACTS}>
-                    <ContactsBlock />
+                    <Contacts />
                 </Tab>
             </TabsWrapped>
 
-        </section>
+                </section>
+            </div>
+        </main>
     </>;
 };
 

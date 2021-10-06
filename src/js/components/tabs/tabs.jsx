@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './tabs.scss';
 
 const Tabs = (props) => {
     const { children, activeItem, onActiveItemChange } = props;

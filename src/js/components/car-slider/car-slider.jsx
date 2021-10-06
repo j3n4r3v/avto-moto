@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { carDetails } from '../types/types';
+import './car-slider.scss';
 
-import { ReactComponent as ArrowRight } from '../../img/icon/arrow-right.svg';
-import { ReactComponent as ArrowLeft } from '../../img/icon/arrow-left.svg';
+import { carDetails } from '../../types/types';
+
+import { ReactComponent as ArrowRight } from '../../../img/icon/arrow-right.svg';
+import { ReactComponent as ArrowLeft } from '../../../img/icon/arrow-left.svg';
 
 const CarSlider = (props) => {
     const { carInfo, activeSlide, onLeftArrowClick, onRightArrowClick } = props;

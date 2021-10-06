@@ -2,15 +2,15 @@ import React, {Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { ActionCreator as ReviewCreator } from '../store/reviews/reviews';
+import { ActionCreator as ReviewCreator } from '../../store/reviews/reviews';
 
-import { getRandomNumber, setItem } from '../utils/utils';
+import { getRandomNumber, setItem } from '../../utils/utils';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { ValidStatus } from '../utils/const';
+import { ValidStatus, stars } from '../../utils/const';
 
-import { ReactComponent as Cross } from '../../img/icon/cross.svg';
+import { ReactComponent as Cross } from '../../../img/icon/cross.svg';
 
-import { stars } from "../utils/const";
+import './popup.scss';
 
 const Popup = (props) => {
 

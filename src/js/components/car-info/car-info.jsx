@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { carDetails } from '../types/types';
-import { getNumberWithSpaces } from '../utils/utils';
+import './car-info.scss';
 
-import { ReactComponent as Gas } from '../../img/icon/gas.svg';
-import { ReactComponent as Transmission } from '../../img/icon/transmission.svg';
-import { ReactComponent as HorsePower } from '../../img/icon/horse-power.svg';
-import { ReactComponent as Capacity } from '../../img/icon/capacity.svg';
+import { carDetails } from '../../types/types';
+import { getNumberWithSpaces } from '../../utils/utils';
+
+import { ReactComponent as Gas } from '../../../img/icon/gas.svg';
+import { ReactComponent as Transmission } from '../../../img/icon/transmission.svg';
+import { ReactComponent as HorsePower } from '../../../img/icon/horse-power.svg';
+import { ReactComponent as Capacity } from '../../../img/icon/capacity.svg';
 
 const CarInfo = (props) => {
     const { carInfo } = props;

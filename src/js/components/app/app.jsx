@@ -1,9 +1,10 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 
-import Main from '../components/main';
-import { AppRoute } from '../utils/const';
-import history from '../history/history';
+import Main from '../main/main';
+
+import { AppRoute } from '../../utils/const';
+import history from '../../history/history';
 
 const App = () => {
 

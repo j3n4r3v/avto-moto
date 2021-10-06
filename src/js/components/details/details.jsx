@@ -1,7 +1,9 @@
 import React from 'react';
-import { carDetails } from '../types/types';
+import { carDetails } from '../../types/types';
 
-const DetailsBlock = (props) => {
+import './details.scss';
+
+const Details = (props) => {
     const { carInfo } = props;
     const { transmission, horsePower, engineType, engineVolume, driveUnit, cylindersNumber, maxTorque } = carInfo;
 
@@ -37,8 +39,8 @@ const DetailsBlock = (props) => {
     </ul>;
 };
 
-DetailsBlock.propTypes = {
+Details.propTypes = {
     carInfo: carDetails,
 };
 
-export default DetailsBlock;
+export default Details;

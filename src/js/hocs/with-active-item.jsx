@@ -1,30 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 
 const withActiveItem = (Component) => {
-    class WithActiveItem extends PureComponent {
-        constructor(props) {
-            super(props);
-            this.state = {
-                activeItem: 0,
-            };
-            this.handleActiveItemChange = this.handleActiveItemChange.bind(this);
-        }
+    const WithActiveItem = (props) => {
+        const [activeItem, SetActiveItem] = useState(0);
 
-        handleActiveItemChange(i) {
-            this.setState({
-                activeItem: i,
-            });
+        const handleActiveItemChange = (i) => {
+            SetActiveItem(i);
         }
-
-        render() {
-            const { activeItem } = this.state;
 
             return <Component
-                {...this.props}
+                {...props}
                 activeItem={activeItem}
-                onActiveItemChange={this.handleActiveItemChange}
+                onActiveItemChange={handleActiveItemChange}
             />;
-        }
     }
 
     WithActiveItem.propTypes = {};

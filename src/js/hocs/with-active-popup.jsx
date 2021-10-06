@@ -1,30 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 
 const withActivePopup = (Component) => {
-    class WithActivePopup extends PureComponent {
-        constructor(props) {
-            super(props);
-            this.state = {
-                isActive: false,
-            };
-            this.handleActivePopupChange = this.handleActivePopupChange.bind(this);
+    const WithActivePopup = (props) => {
+        const [isActive, SetisActive] = useState(false);
+
+        const handleActivePopupChange = () => {
+            SetisActive(!isActive);
         }
 
-        handleActivePopupChange() {
-            this.setState({
-                isActive: !this.state.isActive,
-            });
-        }
-
-        render() {
-            const { isActive } = this.state;
-
-            return <Component
-                {...this.props}
-                isActive={isActive}
-                onActivePopupChange={this.handleActivePopupChange}
-            />;
-        }
+        return <Component
+            {...props}
+            isActive={isActive}
+            onActivePopupChange={handleActivePopupChange}
+        />;
     }
 
     WithActivePopup.propTypes = {};

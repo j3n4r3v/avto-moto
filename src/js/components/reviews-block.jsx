@@ -98,7 +98,7 @@ const ReviewsBlock = (props) => {
 
 ReviewsBlock.propTypes = {
     reviews: PropTypes.arrayOf(reviewsDetails),
-    isActive: PropTypes.bool.isRequired,
+    isActive: PropTypes.bool,
     onActivePopupChange: PropTypes.func.isRequired,
 };
 

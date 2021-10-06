@@ -1,32 +1,26 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 
 const withRating = (Component) => {
-    class WithRating extends PureComponent {
-        constructor(props) {
-            super(props);
+    const WithRating = (props) => {
 
-            this.state = {
-                rating: ``,
-            };
+        const [data, setData] = useState({
+            rating: ``,
+        });
 
-            this._handleRatingChange = this._handleRatingChange.bind(this);
-        }
-
-        _handleRatingChange(evt) {
-            this.setState({
+        const _handleRatingChange = (evt) => {
+            setData({
+                ...data,
                 rating: evt.target.value,
             });
         }
 
-        render() {
-            const { rating } = this.state;
+            const { rating } = data;
 
             return <Component
-                {...this.props}
+                {...props}
                 rating={rating}
-                onRatingChange={this._handleRatingChange}
+                onRatingChange={_handleRatingChange}
             />;
-        }
     }
 
     WithRating.propTypes = {};

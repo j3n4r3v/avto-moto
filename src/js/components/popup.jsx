@@ -14,7 +14,7 @@ const stars = [`5`, `4`, `3`, `2`, `1`];
 
 const Popup = (props) => {
 
-        const {
+const {
     author,
     validAuthor,
     comment,

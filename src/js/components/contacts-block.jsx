@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
@@ -16,8 +16,8 @@ const containerStyle = {
     top: `6px`,
 };
 
-class ContactsBlock extends PureComponent {
-    render() {
+const ContactsBlock = (props) => {
+
         return <>
             <div className="car-card__contacts-wrapper">
                 <ul className="car-card__contacts contacts">
@@ -39,7 +39,7 @@ class ContactsBlock extends PureComponent {
                     </li>
                 </ul>
                 <Map
-                    google={this.props.google}
+                    google={props.google}
                     style={mapStyles}
                     containerStyle={containerStyle}
                     initialCenter={
@@ -56,7 +56,6 @@ class ContactsBlock extends PureComponent {
                 </Map>
             </div>
         </>;
-    }
 }
 
 ContactsBlock.propTypes = {

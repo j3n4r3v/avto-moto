@@ -1,40 +1,26 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import { SLIDE_STEP } from '../utils/const';
 
 const withActiveSlide = (Component) => {
-    class WithActiveSlide extends PureComponent {
-        constructor(props) {
-            super(props);
-            this.state = {
-                activeSlide: 0,
-            };
+    const WithActiveSlide = (props) => {
+        const [activeSlide, SetActiveSlide] = useState(0);
 
-            this.handleLeftArrowClick = this.handleLeftArrowClick.bind(this);
-            this.handleRightArrowClick = this.handleRightArrowClick.bind(this);
+
+        const handleLeftArrowClick = () => {
+            SetActiveSlide(activeSlide - SLIDE_STEP);
         }
 
-        handleLeftArrowClick() {
-            this.setState({
-                activeSlide: this.state.activeSlide - SLIDE_STEP,
-            });
+        const handleRightArrowClick = () => {
+            SetActiveSlide(activeSlide + SLIDE_STEP);
         }
-
-        handleRightArrowClick() {
-            this.setState({
-                activeSlide: this.state.activeSlide + SLIDE_STEP,
-            });
-        }
-
-        render() {
-            const { activeSlide } = this.state;
 
             return <Component
-                {...this.props}
+                {...props}
                 activeSlide={activeSlide}
-                onLeftArrowClick={this.handleLeftArrowClick}
-                onRightArrowClick={this.handleRightArrowClick}
+                onLeftArrowClick={handleLeftArrowClick}
+                onRightArrowClick={handleRightArrowClick}
             />;
-        }
+
     }
 
     WithActiveSlide.propTypes = {};

@@ -1,52 +1,49 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import { ValidStatus } from '../utils/const';
 
 const withName = (Component) => {
-    class WithName extends PureComponent {
-        constructor(props) {
-            super(props);
+    const WithName = (props) => {
+        
+        const [data, setData] = useState({
+            author: ``,
+            validAuthor: ValidStatus.VALID,
+        })
 
-            this.state = {
-                author: ``,
-                validAuthor: ValidStatus.VALID,
-            };
-
-            this._handleNameInput = this._handleNameInput.bind(this);
-            this._handleValidNameCheck = this._handleValidNameCheck.bind(this);
-        }
-
-        _handleNameInput(evt) {
-            this.setState({
-                author: evt.target.value,
+            const _handleNameInput = (evt) => {
+                setData({
+                    ...data,
+                    author: evt.target.value
             });
+
             if (evt.target.value) {
-                this.setState({
+                setData({
+                    ...data,
                     validAuthor: ValidStatus.VALID
                 });
             } else {
-                this.setState({
+                setData({
+                    ...data,
                     validAuthor: ValidStatus.INVALID,
                 });
             }
         }
 
-        _handleValidNameCheck(status) {
-            this.setState({
+        const _handleValidNameCheck = (status) => {
+            setData({
+                ...data,
                 validAuthor: status
             });
         }
 
-        render() {
-            const { author, validAuthor } = this.state;
+        const { author, validAuthor } = data;
 
             return <Component
-                {...this.props}
+                {...props}
                 author={author}
                 validAuthor={validAuthor}
-                onNameInput={this._handleNameInput}
-                onValidNameCheck={this._handleValidNameCheck}
+                onNameInput={_handleNameInput}
+                onValidNameCheck={_handleValidNameCheck}
             />;
-        }
     }
 
     WithName.propTypes = {};

@@ -1,12 +1,16 @@
 @import  '../../../styles/global/colors.scss';
-@import  '../../../styles/global/body.scss';
-@import  '../../../styles/global/fonts.scss';
-@import  '../../../styles/global/hidden.scss';
-@import  '../../../styles/global/normalize.scss';
+
+.footer {
+  margin-top: 120px;
+  background-color: $bg-gray;
+  flex-shrink: 1;
+  min-height: 82px;
+}
 
 .footer-nav {
   max-width: 1225px;
   margin: 0 auto;
+  padding-top: 1px;
 }
 
 .footer-nav__list {

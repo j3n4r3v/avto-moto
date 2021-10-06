@@ -99,7 +99,7 @@ const {
                             <ul className="review-form__left-list">
                                 <li className="review-form__left-item">
                                     {!validAuthor && <p className="review-form__text">Пожалуйста, заполните поле</p>}
-                                    {!author && <label className="review-form__label" htmlFor="name">*</label>}
+                                    {!author && <span className="review-form__label" htmlFor="name">*</span>}
                                     <input className="review-form__input" id="name" type="text" name="name" placeholder="Имя" autoFocus
                                         onChange={(evt) => {
                                             onNameInput(evt);

@@ -2,28 +2,28 @@ import React, { useState } from 'react';
 import { ValidStatus } from '../utils/const';
 
 const withText = (Component) => {
+
     const WithText = (props) => {
 
-            const [data, setData] = useState({
-                comment: ``,
-                dignity: ``,
-                limitations: ``,
-                validComment: ValidStatus.VALID,
+        const [data, setData] = useState({
+            comment: ``,
+            dignity: ``,
+            limitations: ``,
+            validComment: ValidStatus.VALID,
             });
 
         const _handleCommentInput = (evt) => {
-            setData({
-                ...data,
-                comment: evt.target.value,
-            });
+
             if (evt.target.value) {
                 setData({
                     ...data,
+                    comment: evt.target.value,
                     validComment: ValidStatus.VALID
                 });
             } else {
                 setData({
                     ...data,
+                    comment: ``,
                     validComment: ValidStatus.INVALID,
                 });
             }

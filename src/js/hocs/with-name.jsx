@@ -10,19 +10,17 @@ const withName = (Component) => {
         })
 
             const _handleNameInput = (evt) => {
-                setData({
-                    ...data,
-                    author: evt.target.value
-            });
 
             if (evt.target.value) {
                 setData({
                     ...data,
-                    validAuthor: ValidStatus.VALID
+                    author: evt.target.value,
+                    validAuthor: ValidStatus.VALID,
                 });
             } else {
                 setData({
                     ...data,
+                    author: ``,
                     validAuthor: ValidStatus.INVALID,
                 });
             }

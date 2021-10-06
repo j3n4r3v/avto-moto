@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 const withActivePopup = (Component) => {
     const WithActivePopup = (props) => {
-        const [isActive, SetisActive] = useState(false);
+        const [data, SetData] = useState(false);
 
         const handleActivePopupChange = () => {
-            SetisActive(!isActive);
+            SetData(!data);
         }
 
         return <Component
             {...props}
-            isActive={isActive}
+            isActive={data}
             onActivePopupChange={handleActivePopupChange}
         />;
     }

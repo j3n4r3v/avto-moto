@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { ActionCreator as ReviewCreator } from '../../store/reviews/reviews';
-
+import { Keydown} from "../../utils/const"
 import { getRandomNumber, setItem } from '../../utils/utils';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { ValidStatus, stars } from '../../utils/const';
@@ -36,7 +36,7 @@ const {
     
    const handleEscButtonClose = (evt) => {
         const { onActivePopupChange } = props;
-        if (evt.keyCode === 27) {
+       if (evt.key === Keydown.ESC || evt.key === Keydown.ESCAPE) {
             onActivePopupChange();
         }
     }
@@ -105,6 +105,7 @@ const {
                                             onNameInput(evt);
                                         }}
                                     />
+                                    <label className="visually-hidden" htmlFor="name">Имя</label>
                                 </li>
                                 <li className="review-form__left-item">
                                     <input className="review-form__input" id="dignity" type="text" name="dignity" placeholder="Достоинства"
@@ -112,6 +113,7 @@ const {
                                             onDignityInput(evt);
                                         }}
                                     />
+                                    <label className="visually-hidden" htmlFor="dignity">Достоинства</label>
                                 </li>
                                 <li className="review-form__left-item">
                                     <input className="review-form__input" id="limitations" type="text" name="limitations" placeholder="Недостатки"
@@ -119,6 +121,7 @@ const {
                                             onLimitationsInput(evt);
                                         }}
                                     />
+                                    <label className="visually-hidden" htmlFor="limitations">Недостатки</label>
                                 </li>
                             </ul>
                         </div>

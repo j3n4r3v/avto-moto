@@ -3,6 +3,12 @@ const SLIDE_STEP = 1;
 const reviewStars = [1, 2, 3, 4, 5];
 const stars = [`5`, `4`, `3`, `2`, `1`];
 
+const Keydown = {
+    ESC: `Esc`,
+    ESCAPE: `Escape`
+};
+
+
 const TabName = {
     DETAILS: `Характеристики`,
     REVIEWS: `Отзывы`,
@@ -22,4 +28,4 @@ const ValidStatus = {
     INVALID: false,
 };
 
-export { SLIDE_STEP, reviewStars, stars, TabName, AppRoute, ValidStatus };
+export { SLIDE_STEP, Keydown, reviewStars, stars, TabName, AppRoute, ValidStatus };

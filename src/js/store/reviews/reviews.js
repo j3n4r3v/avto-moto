@@ -32,7 +32,6 @@ const reducer = (state = initialState, action) => {
                 reviews: action.payload,
             });
         default:
-            // do nothing
     }
 
     return state;

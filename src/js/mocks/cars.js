@@ -1,9 +1,9 @@
-import slide1 from '../../img/content/desctop_slide_1.jpg'
-import slide2 from '../../img/content/desctop_slide_2.jpg'
-import slide3 from '../../img/content/desctop_slide_3.jpg'
-import slide1min from '../../img/content/desctop_slide_1_min.jpg'
-import slide2min from '../../img/content/desctop_slide_2_min.jpg'
-import slide3min from '../../img/content/desctop_slide_3_min.jpg'
+import slide1 from '../../img/content/desctop-slide-1.jpg'
+import slide2 from '../../img/content/desctop-slide-2.jpg'
+import slide3 from '../../img/content/desctop-slide-3.jpg'
+import slide1min from '../../img/content/desctop-slide-1-min.jpg'
+import slide2min from '../../img/content/desctop-slide-2-min.jpg'
+import slide3min from '../../img/content/desctop-slide-3-min.jpg'
 
 export const carInfo = {
     id: 1,

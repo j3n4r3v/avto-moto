@@ -25,6 +25,12 @@ const PopupWrapped = withName(withRating(withText(Popup)));
 const Reviews = (props) => {
     const { reviews, isActive, onActivePopupChange } = props;
     return <>
+        <button className="car-card__review-button" type="button" onClick={(evt) => {
+            evt.preventDefault();
+            onActivePopupChange();
+        }}>
+            Оставить отзыв
+        </button>
         <ul className="car-card__reviews-list">
             {reviews.map((review, i) => {
                 const { author, dignity, limitations, comment, rating, date } = review;
@@ -86,12 +92,6 @@ const Reviews = (props) => {
                 </li>;
             })}
         </ul>
-        <button className="car-card__review-button" type="button" onClick={(evt) => {
-            evt.preventDefault();
-            onActivePopupChange();
-        }}>
-            Оставить отзыв
-        </button>
         {isActive && <PopupWrapped onActivePopupChange={onActivePopupChange} />}
     </>;
 };

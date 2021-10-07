@@ -34,9 +34,9 @@ const {
     }, [])
 
     
-   const handleEscButtonClose = (window) => {
+   const handleEscButtonClose = (evt) => {
         const { onActivePopupChange } = props;
-       if (window.key === Keydown.ESC || window.key === Keydown.ESCAPE) {
+       if (evt.key === Keydown.ESC || evt.key === Keydown.ESCAPE) {
             onActivePopupChange();
         }
     }
@@ -91,7 +91,7 @@ const {
     }
 
         return <>
-            <section className="popup" onKeyDown={handleEscButtonClose}>
+            <section className="popup" onKeyDown={handleEscButtonClose} autoFocus tabIndex="1">
                 <h2 className="popup__title">Оставить отзыв</h2>
                 <form action="#" className="popup-form review-form" onSubmit={handleSubmit}>
                     <div className="review-form__wrapper">

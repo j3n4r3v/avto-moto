@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect } from 'react';
+import React, {Fragment, useEffect, useRef} from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -33,7 +33,25 @@ const {
         return enablePageScroll;
     }, [])
 
-    
+    const topTabTrap = useRef();
+    const bottomTabTrap = useRef();
+    const firstFocusableElement = useRef();
+    const lastFocusableElement = useRef();
+
+    useEffect(() => {
+        document.addEventListener('focusin', trapFocus)
+
+        return () => document.removeEventListener('focusin', trapFocus)
+        function trapFocus(event) {
+            if (event.target === topTabTrap.current) {
+                lastFocusableElement.current.focus()
+            }
+            if (event.target === bottomTabTrap.current) {
+                firstFocusableElement.current.focus()
+            }
+        }
+    }, [firstFocusableElement, lastFocusableElement])
+
    const handleEscButtonClose = (evt) => {
         const { onActivePopupChange } = props;
        if (evt.key === Keydown.ESC || evt.key === Keydown.ESCAPE) {
@@ -93,14 +111,15 @@ const {
         return <>
             <section className="popup" onKeyDown={handleEscButtonClose}>
                 <h2 className="popup__title">Оставить отзыв</h2>
-                <form action="#" className="popup-form review-form" onSubmit={handleSubmit}>
+                    <form action="#" className="popup-form review-form" onSubmit={handleSubmit}>
                     <div className="review-form__wrapper">
                         <div className="review-form__col">
                             <ul className="review-form__left-list">
                                 <li className="review-form__left-item">
+                                    <span ref={topTabTrap} tabIndex="0" />
                                     {!validAuthor && <p className="review-form__text">Пожалуйста, заполните поле</p>}
                                     {!author && <span className="review-form__label" htmlFor="name">*</span>}
-                                    <input className="review-form__input" id="name" type="text" name="name" placeholder="Имя" autoFocus
+                                    <input className="review-form__input" ref={firstFocusableElement} id="name" type="text" name="name" placeholder="Имя" autoFocus
                                         onChange={(evt) => {
                                             onNameInput(evt);
                                         }}
@@ -154,7 +173,7 @@ const {
                         <button className="review-form__button" type="submit">Оставить отзыв</button>
                     </div>
                     <div className="review-form__close">
-                        <button className="review-form__button-close" type="button" onClick={(evt) => {
+                        <button className="review-form__button-close" ref={lastFocusableElement} type="button" onClick={(evt) => {
                             evt.preventDefault();
                             onActivePopupChange();
                         }}>
@@ -164,6 +183,7 @@ const {
                         </button>
                     </div>
                 </form>
+                <span ref={bottomTabTrap} tabIndex="0"/>
             </section>
             <div className="popup__bg-layer" onClick={() => {
                 onActivePopupChange();

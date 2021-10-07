@@ -34,9 +34,9 @@ const {
     }, [])
 
     
-   const handleEscButtonClose = (evt) => {
+   const handleEscButtonClose = (window) => {
         const { onActivePopupChange } = props;
-       if (evt.key === Keydown.ESC || evt.key === Keydown.ESCAPE) {
+       if (window.key === Keydown.ESC || window.key === Keydown.ESCAPE) {
             onActivePopupChange();
         }
     }

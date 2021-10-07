@@ -3,8 +3,8 @@
 .footer {
   margin-top: 120px;
   background-color: $bg-gray;
-  flex-shrink: 1;
   min-height: 82px;
+  flex: 0 0 auto;
 }
 
 .footer-nav {
@@ -20,14 +20,13 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
-  margin-left: 10px;
+  margin-left: 40px;
   margin-right: 20px;
 }
 
 .footer-nav__item {
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-left: 30px;
 }
 
 .footer-nav__link {

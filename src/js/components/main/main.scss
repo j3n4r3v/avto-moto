@@ -1,8 +1,18 @@
 @import  '../../../styles/global/colors.scss';
 
+.main {
+  flex: 1 0 auto;
+}
+
 .main-nav {
   width: 520px;
   margin-right: 20px;
+}
+
+.main__wrapper {
+  max-width: 1185px;
+  margin: 0 auto;
+  margin-top: 70px;
 }
 
 .main-nav__list {
@@ -15,10 +25,6 @@
   padding: 0;
   margin-top: 16px;
   list-style: none;
-}
-
-.main-nav__item:not(:first-child) {
-  margin-left: 30px;
 }
 
 .main-nav__link {

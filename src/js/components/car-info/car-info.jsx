@@ -12,7 +12,7 @@ import { ReactComponent as Capacity } from '../../../img/icon/capacity.svg';
 
 const CarInfo = (props) => {
     const { carInfo } = props;
-    const { model, price, oldPrice, transmission, horsePower, engineType, engineVolume } = carInfo;
+    const { model, price, oldPrice, transmissionLow, horsePowerLow, engineVolumeLow, engineTypeLow} = carInfo;
 
     return <>
         <div className="car-card__car-info car-info">
@@ -23,7 +23,7 @@ const CarInfo = (props) => {
                     <Gas width="22" height="22" />
 
                     <p className="car-info__text">
-                        {engineType}
+                        {engineTypeLow}
                     </p>
                 </li>
                 <li className="car-info__item">
@@ -31,7 +31,7 @@ const CarInfo = (props) => {
                     <Transmission width="23" height="22" />
 
                     <p className="car-info__text">
-                        {transmission}
+                        {transmissionLow}
                     </p>
                 </li>
                 <li className="car-info__item">
@@ -39,7 +39,7 @@ const CarInfo = (props) => {
                     <HorsePower width="30" height="21" />
 
                     <p className="car-info__text">
-                        {horsePower} л.с.
+                        {horsePowerLow} л.с.
                     </p>
                 </li>
                 <li className="car-info__item">
@@ -47,7 +47,7 @@ const CarInfo = (props) => {
                     <Capacity width="30" height="22" />
 
                     <p className="car-info__text">
-                        {engineVolume} л.
+                        {engineVolumeLow} л.
                     </p>
                 </li>
             </ul>

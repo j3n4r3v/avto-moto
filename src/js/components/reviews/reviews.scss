@@ -11,6 +11,10 @@
   margin-bottom: 15px;
 }
 
+.review__text {
+word-break: break-all;
+}
+
 .review__list {
   margin: 0;
   padding: 0;
@@ -18,7 +22,14 @@
 }
 
 .review__item {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  
+  &:first-child {
+    margin-bottom: 10px;
+}
+    &:last-child {
+    margin-bottom: 14px;
+  }
 }
 
 .review__title {

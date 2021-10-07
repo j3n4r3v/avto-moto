@@ -21,7 +21,8 @@
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin-left: 10px;
+  padding-left: 40px;
+  margin-left: -33px;
   margin-top: 31px;
   margin-bottom: 40px;
   width: 285px;
@@ -29,11 +30,11 @@
 
 .car-info__item {
   text-align: center;
-  flex-grow: 1;
 
-  &:not(:first-child) {
-    margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
   }
+
 }
 
 .car-info__text {

@@ -2,7 +2,7 @@
 
 .header {
   background-color: $bg-gray;
-  flex-shrink: 1;
+  flex: 1 0 auto;
 }
 
 .header__wrapper {

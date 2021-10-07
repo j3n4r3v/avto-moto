@@ -1,4 +1,4 @@
-@import  '../../../styles/global/colors.scss';
+@import "../../../styles/global/colors.scss";
 
 .popup {
   display: flex;
@@ -41,55 +41,88 @@
   margin-top: 27px;
 }
 
-.rating .rating__input {
-  display: none;
+.review-form__group {
+  position: relative;
+  width: 160px;
+  left: 150px;
+  width: 10em;
+  height: 2em;
+  background-image: url(../../../img/icon/star.svg);
+  background-size: 2em auto;
+  background-repeat: repeat-x;
 }
 
-.rating > .rating__input:checked ~ label {
-  color: rgba($text-red, 0.8);
+.review-form__group:focus-within {
+  outline: 0.2em solid #4a90e2;
+  outline-offset: 0.2em;
 }
 
-.rating:not(:checked) > .rating__label:hover,
-.rating:not(:checked) > .rating__label:hover ~ label {
-  color: rgba($text-red, 0.6);
+.rating__star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 2em;
+  font-size: inherit;
+  appearance: none;
+  background-size: 2em auto;
+  background-repeat: repeat-x;
 }
 
-.rating > .rating__input:checked + .rating__label:hover,
-.rating > .rating__input:checked + .rating__label:hover ~ .rating__label,
-.rating > .rating__input:checked ~ .rating__label:hover,
-.rating > .rating__input:checked ~ .rating__label:hover ~ .rating__label,
-.rating > label:hover ~ .rating__input:checked ~ label {
-  color: rgba($text-red, 0.9);
+.rating__star:focus {
+  outline: none;
 }
 
-.rating__label {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  padding-right: 5px;
-  cursor: pointer;
-  color: rgba(56, 44, 42, 0.36);
-  transition: color 0.2s;
-
-  &:first-of-type {
-    padding-right: 0;
-  }
+.rating__star:focus ~ .rating__focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  outline: 0.2em solid #4a90e2;
+  outline-offset: 0.2em;
 }
 
-.rating__label:first-child {
-  padding-right: 0;
+.rating__star:hover,
+.rating__star:checked {
+  background-image: url(../../../img/icon/star-active.svg);
 }
 
-.rating__label::after {
-  content: "★";
-  display: block;
-  font-size: 32px;
-  line-height: 36px;
+.rating__star:hover ~ .rating__star {
+  background-image: url(../../../img/icon/star.svg);
+}
+
+.rating__star:nth-of-type(1) {
+  z-index: 5;
+  width: 2em;
+}
+
+.rating__star:nth-of-type(2) {
+  z-index: 4;
+  width: 4em;
+}
+
+.rating__star:nth-of-type(3) {
+  z-index: 3;
+  width: 6em;
+}
+
+.rating__star:nth-of-type(4) {
+  z-index: 2;
+  width: 8em;
+}
+
+.rating__star:nth-of-type(5) {
+  z-index: 1;
+  width: 10em;
 }
 
 .rating__text {
   margin: 0;
   padding: 0;
+  position: relative;
+  right: 150px;
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;

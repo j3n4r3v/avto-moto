@@ -91,7 +91,7 @@ const {
     }
 
         return <>
-            <section className="popup" onKeyDown={handleEscButtonClose} autoFocus tabIndex="1">
+            <section className="popup" onKeyDown={handleEscButtonClose}>
                 <h2 className="popup__title">Оставить отзыв</h2>
                 <form action="#" className="popup-form review-form" onSubmit={handleSubmit}>
                     <div className="review-form__wrapper">
@@ -126,15 +126,15 @@ const {
                             </ul>
                         </div>
                         <div className="review-form__col">
-                            <div className="review-form__rating rating">
+                            <div className="review-form__group rating">
                                 {stars.map((star, i) => {
                                     return <Fragment key={star + i}>
-                                        <input className="rating__input" id={`star-${star}`} type="radio" name="rating" value={star}
+                                        <input className="rating__star" id={`star-${star}`} type="radio" name="rating" value={star}
                                             onChange={(evt) => {
                                                 onRatingChange(evt);
                                             }}
                                         />
-                                        <label className="rating__label" htmlFor={`star-${star}`}>Rating {star}</label>
+                                        <label className="rating__label" htmlFor={`star-${star}`}></label>
                                     </Fragment>;
                                 })}
                                 <p className="rating__text">Оцените товар:</p>

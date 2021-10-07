@@ -1,15 +1,5 @@
 @import  '../../../styles/global/colors.scss';
 
-.main {
-  flex-grow: 1;
-}
-
-.main__wrapper {
-  max-width: 1185px;
-  margin: 0 auto;
-  margin-top: 70px;
-}
-
 .car-card__wrapper {
   display: flex;
   flex-direction: row;
@@ -19,6 +9,7 @@
   position: relative;
   margin-top: 10px;
   margin-left: 16px;
+  margin-bottom: 30px;
 }
 
 .car-card__reviews-list {

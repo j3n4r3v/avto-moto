@@ -42,7 +42,7 @@
 }
 
 .review-form__stars {
-  padding-top: 8px;
+  padding-top: 6px;
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
@@ -131,4 +131,5 @@
   font-size: 15px;
   line-height: 20px;
   align-self: center;
+  word-break: break-all;
 }

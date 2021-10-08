@@ -42,15 +42,16 @@
 }
 
 .review-form__stars {
+  padding-top: 8px;
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
 }
 
 .review-form__group {
   position: relative;
   width: 160px;
-  width: 10em;
-  height: 2em;
+  height: 24px;
   background-image: url(../../../img/icon/star.svg);
   background-size: 31px 19px;
   background-repeat: repeat-x;
@@ -125,7 +126,7 @@
 }
 
 .rating__text {
-width: 120px;
+  width: 120px;
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;

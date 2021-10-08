@@ -52,7 +52,7 @@
   width: 10em;
   height: 2em;
   background-image: url(../../../img/icon/star.svg);
-  background-size: 2em auto;
+  background-size: 31px 19px;
   background-repeat: repeat-x;
 }
 
@@ -91,10 +91,12 @@
 .rating__star:hover,
 .rating__star:checked {
   background-image: url(../../../img/icon/star-active.svg);
+      background-size: 31px 19px;
 }
 
 .rating__star:hover ~ .rating__star {
   background-image: url(../../../img/icon/star.svg);
+  background-size: 31px 19px;
 }
 
 .rating__star:nth-of-type(1) {

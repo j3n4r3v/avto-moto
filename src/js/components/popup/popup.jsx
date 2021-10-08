@@ -145,6 +145,8 @@ const {
                             </ul>
                         </div>
                         <div className="review-form__col">
+                            <div className="review-form__stars">
+                                <p className="rating__text">Оцените товар:</p>
                             <div className="review-form__group rating">
                                 {stars.map((star, i) => {
                                     return <Fragment key={star + i}>
@@ -156,7 +158,7 @@ const {
                                         <label className="rating__label" htmlFor={`star-${star}`}></label>
                                     </Fragment>;
                                 })}
-                                <p className="rating__text">Оцените товар:</p>
+                                </div>
                             </div>
                             <div className="review-form__comment">
                                 {!validComment && <p className="review-form__text review-form__text--textarea">Пожалуйста, заполните поле</p>}

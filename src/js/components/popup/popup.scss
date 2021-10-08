@@ -41,10 +41,14 @@
   margin-top: 27px;
 }
 
+.review-form__stars {
+    display: flex;
+    justify-content: space-between;
+}
+
 .review-form__group {
   position: relative;
   width: 160px;
-  left: 150px;
   width: 10em;
   height: 2em;
   background-image: url(../../../img/icon/star.svg);
@@ -119,10 +123,7 @@
 }
 
 .rating__text {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  right: 150px;
+width: 120px;
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;

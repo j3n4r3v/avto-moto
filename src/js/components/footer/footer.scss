@@ -1,14 +1,14 @@
 @import  '../../../styles/global/colors.scss';
 
 .footer {
-  margin-top: 86px;
+  margin-top: 89px;
   background-color: $bg-gray;
   min-height: 82px;
   flex: 0 0 auto;
 }
 
 .footer-nav {
-  max-width: 1225px;
+  max-width: 1215px;
   margin: 0 auto;
   padding-top: 1px;
 }
@@ -20,8 +20,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
-  margin-left: 40px;
-  margin-right: 20px;
+  margin-left: 20px;
+  margin-right: 28px;
 }
 
 .footer-nav__item {

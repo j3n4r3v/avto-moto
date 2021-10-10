@@ -32,9 +32,11 @@
   text-align: center;
 
   &:first-child {
-    margin-left: 0;
+    margin-left: 3px;
   }
-
+  &:last-child {
+    margin-left: 8px;
+  }
 }
 
 .car-info__text {

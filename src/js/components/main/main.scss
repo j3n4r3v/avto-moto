@@ -16,9 +16,8 @@
 }
 
 .main-nav__list {
+  column-gap: 69px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
   align-content: center;
   margin: 0;

@@ -12,10 +12,6 @@
   margin-left: 2px;
 }
 
-.review__text {
-word-break: break-all;
-}
-
 .review__list {
   margin: 0;
   padding: 0;
@@ -75,6 +71,7 @@ word-break: break-all;
   padding: 0;
   font-size: 15px;
   line-height: 20px;
+  word-break: break-word;
 }
 
 .review__rating {
